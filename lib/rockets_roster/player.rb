@@ -1,5 +1,3 @@
-require 'pry'
-
 class RocketsRoster::Player
 
     attr_accessor :name, :position, :height, :weight

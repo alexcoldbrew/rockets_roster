@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-require 'json'
+
 
 require_relative "rockets_roster/version"
 
