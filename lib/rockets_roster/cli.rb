@@ -22,10 +22,11 @@ class RocketsRoster::CLI
     end
 
     def list_players
-        #@players = RocketsRoster::Player.all
         # this allows to print each name of every player instance with a menu number
         @@players.each.with_index(1) do |player, i|
-            puts "#{i}. #{player.name[i - 1]}"
+            player.name.each.with_index(1) do |player, i|   
+                puts "#{i}. #{player}"
+            end
         end
     end
 
@@ -33,14 +34,17 @@ class RocketsRoster::CLI
         input = nil
         while input != "exit"
             puts "Choose the menu number for the player you'd like to know more about, type list to display roster again, or type exit to end:"
+            puts ""
+
             input = gets.strip.downcase
-            
+
+            puts ""
             if input.to_i > 0 # one of players on roster
                 # puts that JUST THAT player's info
                 # absolutely had to create number menu and this local variable to work properly
                 the_player = @@players[input.to_i - 1]
-                puts "Position: #{the_player.position[input.to_i - 1]} - Height: #{the_player.height[input.to_i - 1]}in - Weight: #{the_player.weight[input.to_i - 1]}lbs"
-                
+                puts "Position: #{the_player.position[input.to_i - 1]}, Height: #{the_player.height[input.to_i - 1]}in, Weight: #{the_player.weight[input.to_i - 1]}lbs"
+                puts ""
             elsif input == 'list'
                 list_players
             else

@@ -5,6 +5,5 @@ require 'json'
 
 require_relative "rockets_roster/version"
 
-require_relative "rockets_roster/scraper"
 require_relative "rockets_roster/player"
 require_relative "rockets_roster/cli"
