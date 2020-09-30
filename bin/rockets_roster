@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "Hello World!"
+require_relative '../lib/rockets_roster.rb'
+
+RocketsRoster::CLI.new.call
