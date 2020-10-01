@@ -1,13 +1,11 @@
 class RocketsRoster::CLI
 
+    # made the call method that runs simple by splitting it up into other methods
     def call
         welcome
         Scraper.scrape_players
         list_players
-        puts ""
-        puts "-----------------------------------------------------------------"
         menu
-        puts ""
     end
 
     def welcome
@@ -28,8 +26,6 @@ class RocketsRoster::CLI
         puts ""
         puts "Here is the current roster for the Houston Rockets!"
         puts ""
-        puts "-----------------------------------------------------------------"
-        puts ""
     end
 
     def goodbye
@@ -38,13 +34,18 @@ class RocketsRoster::CLI
         puts "Thanks for using! Go Rockets!!".colorize(:red)
         puts ""
         puts "-----------------------------------------------------------------"
+        puts ""
     end
 
     def list_players
+        puts "-----------------------------------------------------------------"
+        puts ""
         # takes all instances of players and interates thru them to return both a menu number and each player, separately
         RocketsRoster::Player.all.each.with_index(1) do |player, i|  
             puts "#{i}".colorize(:red) + ". #{player.name}"
         end
+        puts ""
+        puts "-----------------------------------------------------------------"
     end
 
     def menu
