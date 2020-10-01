@@ -21,7 +21,7 @@ class RocketsRoster::CLI
          |  ||  ||  ``  ||  ``  ||  ||  ||  ````||  |  |``||  |
          |  ||  ||__..--``---`````--``--````----``..|_ |  ``  |
          |  | \/                                      ``--.__ |
-          \/                                                 ``"
+          \/                                                 ``".colorize(:red)
         puts ""
         puts "Here is the current roster for the Houston Rockets!"
         puts ""
@@ -33,7 +33,7 @@ class RocketsRoster::CLI
 
     def list_players
         RocketsRoster::Player.all.each.with_index(1) do |player, i|  
-            puts "#{i}. #{player.name}"
+            puts "#{i}".colorize(:red) + ". #{player.name}"
         end
     end
 
@@ -41,7 +41,7 @@ class RocketsRoster::CLI
         input = nil
         while input != "exit"
             puts ""
-            puts "Choose the menu number for the player you'd like to know more about, type 'list' to display roster again, or type 'exit' to end:"
+            puts "Choose the menu number for the player you'd like to know more about, type " + "'list'".colorize(:light_blue) + " to display roster again, or type " + "'exit'".colorize(:light_blue) + " to end:"
             puts ""
 
             input = gets.strip.downcase
@@ -49,14 +49,14 @@ class RocketsRoster::CLI
             puts ""
             if input.to_i.between?(1, 18)
                 the_player = RocketsRoster::Player.all[input.to_i - 1]
-                puts "Name: #{the_player.name}, Position: #{the_player.position}, Height: #{the_player.height}in, Weight: #{the_player.weight}lbs"
+                puts "Name: ".colorize(:red) + "#{the_player.name}, " + "Position: ".colorize(:red) + "#{the_player.position}, " + "Height: ".colorize(:red) + "#{the_player.height}in, " + "Weight: ".colorize(:red) + "#{the_player.weight}lbs"
                 puts ""
             elsif input == 'list'
                 list_players
             elsif input =='exit'
                 goodbye
             else
-                puts "Not sure what you want, type 'list' or 'exit'."
+                puts "Not sure what you want, type " + "'list'".colorize(:light_blue) + " or " + "'exit'".colorize(:light_blue) + " ."
             end
         end
     end
