@@ -5,6 +5,7 @@ class RocketsRoster::CLI
         Scraper.scrape_players
         list_players
         puts ""
+        puts "-----------------------------------------------------------------"
         menu
         puts ""
     end
@@ -23,12 +24,20 @@ class RocketsRoster::CLI
          |  | \/                                      ``--.__ |
           \/                                                 ``".colorize(:red)
         puts ""
+        puts "-----------------------------------------------------------------"
+        puts ""
         puts "Here is the current roster for the Houston Rockets!"
+        puts ""
+        puts "-----------------------------------------------------------------"
         puts ""
     end
 
     def goodbye
+        puts "-----------------------------------------------------------------"
+        puts ""
         puts "Thanks for using! Go Rockets!!".colorize(:red)
+        puts ""
+        puts "-----------------------------------------------------------------"
     end
 
     def list_players
