@@ -1,3 +1,5 @@
+# this file is just requiring all of our various files and gems so that every other file can access them without 'require'-ing at the top of every file
+
 require 'nokogiri'
 require 'open-uri'
 require 'pry'

@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 
+# the above ^ shebang line interbrets our whole program in the Ruby language and HAS to be on the top line. Learned that the hard way early into my program and took forever to figure it out...
+
+# requires our file that requires all other files so that it can access everything
+
 require_relative '../lib/rockets_roster.rb'
+
+# this starts the program!
 
 RocketsRoster::CLI.new.call
